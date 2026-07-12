@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Modal Robustness</title>
+    <meta
+      name="description"
+      content="Placeholder GitHub Pages site for the multi_modal_robustness repository."
+    />
+    <style>
+      :root {
+        --bg: #f3efe6;
+        --ink: #16181d;
+        --muted: #565f6b;
+        --panel: rgba(255, 255, 255, 0.78);
+        --line: rgba(22, 24, 29, 0.1);
+        --accent: #0d6b63;
+        --accent-2: #d5ebe8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        font-family: "Times New Roman", Georgia, serif;
+        background:
+          radial-gradient(circle at 15% 20%, rgba(13, 107, 99, 0.12), transparent 28%),
+          radial-gradient(circle at 85% 10%, rgba(191, 151, 94, 0.12), transparent 24%),
+          linear-gradient(180deg, #f9f7f1 0%, var(--bg) 100%);
+      }
+
+      .shell {
+        width: min(980px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 40px 0 64px;
+      }
+
+      .frame {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        overflow: hidden;
+        background: var(--panel);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 26px 80px rgba(33, 41, 52, 0.12);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 18px 22px;
+        border-bottom: 1px solid var(--line);
+        font: 600 0.86rem/1.1 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        color: var(--accent);
+        background: var(--accent-2);
+      }
+
+      .content {
+        padding: 52px 24px 28px;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 10ch;
+        font-size: clamp(3rem, 9vw, 6rem);
+        line-height: 0.93;
+        letter-spacing: -0.05em;
+      }
+
+      .lead {
+        max-width: 44rem;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font: 400 1.08rem/1.75 Arial, Helvetica, sans-serif;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.56);
+      }
+
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 1.05rem;
+      }
+
+      .card p,
+      .footer {
+        margin: 0;
+        color: var(--muted);
+        font: 400 0.96rem/1.65 Arial, Helvetica, sans-serif;
+      }
+
+      .warning {
+        margin-top: 20px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        border-left: 4px solid var(--accent);
+        background: linear-gradient(90deg, rgba(213, 235, 232, 0.9), rgba(213, 235, 232, 0.28));
+        color: var(--muted);
+        font: 400 0.95rem/1.65 Arial, Helvetica, sans-serif;
+      }
+
+      code {
+        padding: 0.15rem 0.35rem;
+        border-radius: 6px;
+        background: rgba(22, 24, 29, 0.07);
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .footer {
+        padding: 0 8px;
+        margin-top: 16px;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="frame">
+        <div class="topbar">
+          <span class="pill">Placeholder Site</span>
+          <span>Published from <code>main/docs</code></span>
+        </div>
+        <div class="content">
+          <h1>Multi-Modal Robustness</h1>
+          <p class="lead">
+            This is a minimal project landing page placeholder. It is suitable for a new GitHub
+            repository, an early demo endpoint, or an anonymous-review-safe website that can later
+            be replaced with the actual project narrative, results, and supplementary materials.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <h2>Status</h2>
+              <p>The repository includes a ready-to-publish static GitHub Pages entrypoint.</p>
+            </article>
+            <article class="card">
+              <h2>Next additions</h2>
+              <p>Add abstract text, benchmarks, figures, demos, or documentation links when ready.</p>
+            </article>
+            <article class="card">
+              <h2>Publishing model</h2>
+              <p>The site is intentionally branch-local so it can be mirrored with repository content.</p>
+            </article>
+          </div>
+          <div class="warning">
+            If this page is used for anonymous review, avoid author names, lab names, organization
+            logos, tracking scripts, or outbound links that reveal identity.
+          </div>
+        </div>
+      </section>
+      <p class="footer">Project website placeholder for <code>multi_modal_robustness</code></p>
+    </main>
+  </body>
+</html>
