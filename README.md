@@ -1,4 +1,4 @@
-# multi_modal_robustness
+# modality_missing_robustness
 
 This repository hosts a minimal placeholder GitHub Pages site for anonymous review or early project sharing.
 
@@ -15,4 +15,4 @@ After the repository exists on GitHub, enable Pages:
 
 The expected Pages URL will be:
 
-`https://stewedfosp.github.io/multi_modal_robustness/`
+`https://stewedfosp.github.io/modality-missing-robustness/`
