@@ -139,6 +139,11 @@
         border-right: none;
       }
 
+      /* Mix / Target span the full result area — no interior column rules */
+      table.demo td.span-all {
+        border-right: none;
+      }
+
       table.demo tr:last-child td {
         border-bottom: none;
       }
@@ -147,6 +152,10 @@
         background: rgba(15, 110, 122, 0.08);
         font-size: 0.86rem;
         font-weight: 600;
+      }
+
+      table.demo thead th.span-all {
+        border-right: none;
       }
 
       table.demo tr.subhead th {
@@ -196,6 +205,20 @@
         width: min(100%, 200px);
         height: 32px;
       }
+
+      /* Center Mix / Target in the undivided span below Demo */
+      td.span-all .clip {
+        width: 100%;
+        justify-items: center;
+      }
+
+      td.span-all .clip img {
+        max-width: 280px;
+      }
+
+      td.span-all .clip audio {
+        width: min(100%, 280px);
+      }
     </style>
   </head>
   <body>
@@ -234,11 +257,7 @@
             <thead>
               <tr>
                 <th scope="col">Demo</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
+                <th class="span-all" colspan="5" scope="colgroup"></th>
               </tr>
             </thead>
             <tbody>
@@ -247,7 +266,7 @@
                   Mix
                   <small>mixture input</small>
                 </th>
-                <td colspan="5">
+                <td class="span-all" colspan="5">
                   <div class="clip">
                     <img src="assets/picture/mix/mix.png" alt="Spectrogram of mixture" />
                     <audio controls preload="none">
@@ -261,7 +280,7 @@
                   Target
                   <small>clean reference</small>
                 </th>
-                <td colspan="5">
+                <td class="span-all" colspan="5">
                   <div class="clip">
                     <img src="assets/picture/target/target.png" alt="Spectrogram of target" />
                     <audio controls preload="none">
