@@ -3,20 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modality Missing Robustness</title>
+    <title>
+      Robust Audio-Visual Target Speaker Extraction with Multimodal Enrollment
+      Fusion
+    </title>
     <meta
       name="description"
-      content="Placeholder GitHub Pages site for the modality_missing_robustness repository."
+      content="Demo page for robust audio-visual target speaker extraction with multimodal enrollment fusion under modality missing."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap"
+      rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #f3efe6;
-        --ink: #16181d;
-        --muted: #565f6b;
-        --panel: rgba(255, 255, 255, 0.78);
-        --line: rgba(22, 24, 29, 0.1);
-        --accent: #0d6b63;
-        --accent-2: #d5ebe8;
+        --bg0: #eef3f6;
+        --bg1: #e4edf2;
+        --ink: #14202a;
+        --muted: #4e6170;
+        --accent: #0f6e7a;
+        --accent-soft: rgba(15, 110, 122, 0.12);
+        --line: rgba(20, 32, 42, 0.14);
+        --panel: rgba(255, 255, 255, 0.72);
+        --spec-bg: #0d1b24;
       }
 
       * {
@@ -27,159 +38,782 @@
         margin: 0;
         min-height: 100vh;
         color: var(--ink);
-        font-family: "Times New Roman", Georgia, serif;
+        font-family: "IBM Plex Sans", sans-serif;
         background:
-          radial-gradient(circle at 15% 20%, rgba(13, 107, 99, 0.12), transparent 28%),
-          radial-gradient(circle at 85% 10%, rgba(191, 151, 94, 0.12), transparent 24%),
-          linear-gradient(180deg, #f9f7f1 0%, var(--bg) 100%);
+          radial-gradient(ellipse 70% 45% at 8% 0%, rgba(15, 110, 122, 0.16), transparent 55%),
+          radial-gradient(ellipse 55% 40% at 100% 10%, rgba(36, 82, 120, 0.12), transparent 50%),
+          linear-gradient(180deg, var(--bg0), var(--bg1));
       }
 
-      .shell {
-        width: min(980px, calc(100vw - 32px));
+      main {
+        width: min(1280px, calc(100vw - 32px));
         margin: 0 auto;
-        padding: 40px 0 64px;
+        padding: 40px 0 72px;
       }
 
-      .frame {
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        overflow: hidden;
-        background: var(--panel);
-        backdrop-filter: blur(8px);
-        box-shadow: 0 26px 80px rgba(33, 41, 52, 0.12);
+      .hero {
+        padding: 8px 0 28px;
       }
 
-      .topbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-        padding: 18px 22px;
-        border-bottom: 1px solid var(--line);
-        font: 600 0.86rem/1.1 Arial, Helvetica, sans-serif;
-        letter-spacing: 0.04em;
+      .eyebrow {
+        margin: 0 0 14px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-      }
-
-      .pill {
-        display: inline-block;
-        padding: 8px 12px;
-        border-radius: 999px;
         color: var(--accent);
-        background: var(--accent-2);
-      }
-
-      .content {
-        padding: 52px 24px 28px;
       }
 
       h1 {
         margin: 0;
-        max-width: 10ch;
-        font-size: clamp(3rem, 9vw, 6rem);
-        line-height: 0.93;
-        letter-spacing: -0.05em;
+        max-width: none;
+        font-family: "Source Serif 4", Georgia, serif;
+        font-size: clamp(1.35rem, 2.6vw, 2.15rem);
+        font-weight: 650;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+      }
+
+      h1 .title-line {
+        display: block;
+        white-space: nowrap;
       }
 
       .lead {
-        max-width: 44rem;
-        margin: 22px 0 0;
+        margin: 16px 0 0;
+        max-width: 60rem;
         color: var(--muted);
-        font: 400 1.08rem/1.75 Arial, Helvetica, sans-serif;
+        font-size: 1.02rem;
+        line-height: 1.7;
       }
 
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
-        margin-top: 30px;
+      .meta {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.55;
       }
 
-      .card {
+      section {
+        margin-top: 36px;
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        font-family: "Source Serif 4", Georgia, serif;
+        font-size: 1.45rem;
+        font-weight: 650;
+      }
+
+      .section-note {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .demo-table-wrap {
+        overflow-x: auto;
         border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 18px;
-        background: rgba(255, 255, 255, 0.56);
+        background: var(--panel);
+        backdrop-filter: blur(8px);
       }
 
-      .card h2 {
-        margin: 0 0 10px;
-        font-size: 1.05rem;
+      table.demo {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 1100px;
       }
 
-      .card p,
-      .footer {
-        margin: 0;
-        color: var(--muted);
-        font: 400 0.96rem/1.65 Arial, Helvetica, sans-serif;
-      }
-
-      .warning {
-        margin-top: 20px;
-        padding: 16px 18px;
-        border-radius: 16px;
-        border-left: 4px solid var(--accent);
-        background: linear-gradient(90deg, rgba(213, 235, 232, 0.9), rgba(213, 235, 232, 0.28));
-        color: var(--muted);
-        font: 400 0.95rem/1.65 Arial, Helvetica, sans-serif;
-      }
-
-      code {
-        padding: 0.15rem 0.35rem;
-        border-radius: 6px;
-        background: rgba(22, 24, 29, 0.07);
-        font-family: "Courier New", Courier, monospace;
-      }
-
-      .footer {
-        padding: 0 8px;
-        margin-top: 16px;
+      table.demo th,
+      table.demo td {
+        border-bottom: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        padding: 10px 8px;
+        vertical-align: top;
         text-align: center;
       }
 
-      @media (max-width: 640px) {
-        .topbar {
-          flex-direction: column;
-          align-items: flex-start;
-        }
+      table.demo th:last-child,
+      table.demo td:last-child {
+        border-right: none;
+      }
+
+      table.demo tr:last-child td {
+        border-bottom: none;
+      }
+
+      table.demo thead th {
+        background: rgba(15, 110, 122, 0.08);
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+
+      table.demo .row-label {
+        width: 210px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.82rem;
+        background: rgba(255, 255, 255, 0.55);
+        white-space: normal;
+      }
+
+      table.demo .row-label small {
+        display: block;
+        margin-top: 4px;
+        font-weight: 400;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .clip {
+        display: grid;
+        gap: 8px;
+        justify-items: center;
+      }
+
+      .clip img {
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 3 / 1;
+        object-fit: cover;
+        background: var(--spec-bg);
+        border: 1px solid var(--line);
+      }
+
+      .clip audio {
+        width: min(100%, 200px);
+        height: 32px;
       }
     </style>
   </head>
   <body>
-    <main class="shell">
-      <section class="frame">
-        <div class="topbar">
-          <span class="pill">Placeholder Site</span>
-          <span>Published from <code>main/docs</code></span>
-        </div>
-        <div class="content">
-          <h1>Modality Missing Robustness</h1>
-          <p class="lead">
-            This is a minimal project landing page placeholder. It is suitable for a new GitHub
-            repository, an early demo endpoint, or an anonymous-review-safe website that can later
-            be replaced with the actual project narrative, results, and supplementary materials.
-          </p>
-          <div class="cards">
-            <article class="card">
-              <h2>Status</h2>
-              <p>The repository includes a ready-to-publish static GitHub Pages entrypoint.</p>
-            </article>
-            <article class="card">
-              <h2>Next additions</h2>
-              <p>Add abstract text, benchmarks, figures, demos, or documentation links when ready.</p>
-            </article>
-            <article class="card">
-              <h2>Publishing model</h2>
-              <p>The site is intentionally branch-local so it can be mirrored with repository content.</p>
-            </article>
-          </div>
-          <div class="warning">
-            If this page is used for anonymous review, avoid author names, lab names, organization
-            logos, tracking scripts, or outbound links that reveal identity.
-          </div>
+    <main>
+      <header class="hero">
+        <p class="eyebrow">Demo</p>
+        <h1>
+          <span class="title-line"
+            >Robust Audio-Visual Target Speaker Extraction with</span
+          >
+          <span class="title-line">Multimodal Enrollment Fusion</span>
+        </h1>
+        <p class="lead">
+          Qualitative comparison on utterance <strong>S50026</strong> under
+          random modality missing (randocc). Each system is shown for models
+          trained without occlusion and after 80% occlusion finetuning.
+        </p>
+        <p class="meta">
+          Systems (top to bottom): avgridnet, avgridnet_aux, avgridnet_expr,
+          avgridnet_auxface, avgridnet_expr_auxface,
+          avgridnet_aux_expr_auxface. Columns: randocc0 / 20 / 40 / 60 / 80.
+        </p>
+      </header>
+
+      <section aria-labelledby="audio-title">
+        <h2 id="audio-title">Demo examples under random modality missing</h2>
+        <p class="section-note">
+          Mix and Target are references from the scene. Subsequent rows are
+          estimated target speech with corresponding spectrograms.
+        </p>
+
+        <div class="demo-table-wrap">
+          <table class="demo">
+            <thead>
+              <tr>
+                <th scope="col">Demo</th>
+                <th scope="col">randocc0</th>
+                <th scope="col">randocc20</th>
+                <th scope="col">randocc40</th>
+                <th scope="col">randocc60</th>
+                <th scope="col">randocc80</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="row-label" scope="row">
+                  Mix
+                  <small>mixture input</small>
+                </th>
+                <td colspan="5">
+                  <div class="clip">
+                    <img src="assets/picture/mix/mix.png" alt="Spectrogram of mixture" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/mix/mix.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  Target
+                  <small>clean reference</small>
+                </th>
+                <td colspan="5">
+                  <div class="clip">
+                    <img src="assets/picture/target/target.png" alt="Spectrogram of target" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/target/target.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet
+                  <small>no occlude train</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/clean/randocc0.png" alt="Spectrogram for avgridnet no occlude train randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/clean/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/clean/randocc20.png" alt="Spectrogram for avgridnet no occlude train randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/clean/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/clean/randocc40.png" alt="Spectrogram for avgridnet no occlude train randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/clean/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/clean/randocc60.png" alt="Spectrogram for avgridnet no occlude train randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/clean/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/clean/randocc80.png" alt="Spectrogram for avgridnet no occlude train randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/clean/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet
+                  <small>80% occlude finetune</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/occlude/randocc0.png" alt="Spectrogram for avgridnet 80% occlude finetune randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/occlude/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/occlude/randocc20.png" alt="Spectrogram for avgridnet 80% occlude finetune randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/occlude/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/occlude/randocc40.png" alt="Spectrogram for avgridnet 80% occlude finetune randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/occlude/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/occlude/randocc60.png" alt="Spectrogram for avgridnet 80% occlude finetune randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/occlude/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet/occlude/randocc80.png" alt="Spectrogram for avgridnet 80% occlude finetune randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet/occlude/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_aux
+                  <small>no occlude train</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/clean/randocc0.png" alt="Spectrogram for avgridnet_aux no occlude train randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/clean/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/clean/randocc20.png" alt="Spectrogram for avgridnet_aux no occlude train randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/clean/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/clean/randocc40.png" alt="Spectrogram for avgridnet_aux no occlude train randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/clean/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/clean/randocc60.png" alt="Spectrogram for avgridnet_aux no occlude train randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/clean/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/clean/randocc80.png" alt="Spectrogram for avgridnet_aux no occlude train randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/clean/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_aux
+                  <small>80% occlude finetune</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc0.png" alt="Spectrogram for avgridnet_aux 80% occlude finetune randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/occlude/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc20.png" alt="Spectrogram for avgridnet_aux 80% occlude finetune randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/occlude/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc40.png" alt="Spectrogram for avgridnet_aux 80% occlude finetune randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/occlude/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc60.png" alt="Spectrogram for avgridnet_aux 80% occlude finetune randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/occlude/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc80.png" alt="Spectrogram for avgridnet_aux 80% occlude finetune randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux/occlude/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_expr
+                  <small>no occlude train</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/clean/randocc0.png" alt="Spectrogram for avgridnet_expr no occlude train randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/clean/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/clean/randocc20.png" alt="Spectrogram for avgridnet_expr no occlude train randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/clean/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/clean/randocc40.png" alt="Spectrogram for avgridnet_expr no occlude train randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/clean/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/clean/randocc60.png" alt="Spectrogram for avgridnet_expr no occlude train randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/clean/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/clean/randocc80.png" alt="Spectrogram for avgridnet_expr no occlude train randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/clean/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_expr
+                  <small>80% occlude finetune</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc0.png" alt="Spectrogram for avgridnet_expr 80% occlude finetune randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/occlude/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc20.png" alt="Spectrogram for avgridnet_expr 80% occlude finetune randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/occlude/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc40.png" alt="Spectrogram for avgridnet_expr 80% occlude finetune randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/occlude/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc60.png" alt="Spectrogram for avgridnet_expr 80% occlude finetune randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/occlude/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc80.png" alt="Spectrogram for avgridnet_expr 80% occlude finetune randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr/occlude/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_auxface
+                  <small>no occlude train</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc0.png" alt="Spectrogram for avgridnet_auxface no occlude train randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/clean/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc20.png" alt="Spectrogram for avgridnet_auxface no occlude train randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/clean/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc40.png" alt="Spectrogram for avgridnet_auxface no occlude train randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/clean/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc60.png" alt="Spectrogram for avgridnet_auxface no occlude train randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/clean/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc80.png" alt="Spectrogram for avgridnet_auxface no occlude train randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/clean/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_auxface
+                  <small>80% occlude finetune</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc0.png" alt="Spectrogram for avgridnet_auxface 80% occlude finetune randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/occlude/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc20.png" alt="Spectrogram for avgridnet_auxface 80% occlude finetune randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/occlude/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc40.png" alt="Spectrogram for avgridnet_auxface 80% occlude finetune randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/occlude/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc60.png" alt="Spectrogram for avgridnet_auxface 80% occlude finetune randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/occlude/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc80.png" alt="Spectrogram for avgridnet_auxface 80% occlude finetune randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_auxface/occlude/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_expr_auxface
+                  <small>no occlude train</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc0.png" alt="Spectrogram for avgridnet_expr_auxface no occlude train randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/clean/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc20.png" alt="Spectrogram for avgridnet_expr_auxface no occlude train randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/clean/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc40.png" alt="Spectrogram for avgridnet_expr_auxface no occlude train randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/clean/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc60.png" alt="Spectrogram for avgridnet_expr_auxface no occlude train randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/clean/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc80.png" alt="Spectrogram for avgridnet_expr_auxface no occlude train randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/clean/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_expr_auxface
+                  <small>80% occlude finetune</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc0.png" alt="Spectrogram for avgridnet_expr_auxface 80% occlude finetune randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc20.png" alt="Spectrogram for avgridnet_expr_auxface 80% occlude finetune randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc40.png" alt="Spectrogram for avgridnet_expr_auxface 80% occlude finetune randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc60.png" alt="Spectrogram for avgridnet_expr_auxface 80% occlude finetune randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc80.png" alt="Spectrogram for avgridnet_expr_auxface 80% occlude finetune randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_aux_expr_auxface
+                  <small>no occlude train</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc0.png" alt="Spectrogram for avgridnet_aux_expr_auxface no occlude train randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc20.png" alt="Spectrogram for avgridnet_aux_expr_auxface no occlude train randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc40.png" alt="Spectrogram for avgridnet_aux_expr_auxface no occlude train randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc60.png" alt="Spectrogram for avgridnet_aux_expr_auxface no occlude train randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc80.png" alt="Spectrogram for avgridnet_aux_expr_auxface no occlude train randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="row-label" scope="row">
+                  avgridnet_aux_expr_auxface
+                  <small>80% occlude finetune</small>
+                </th>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc0.png" alt="Spectrogram for avgridnet_aux_expr_auxface 80% occlude finetune randocc0" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc0.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc20.png" alt="Spectrogram for avgridnet_aux_expr_auxface 80% occlude finetune randocc20" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc20.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc40.png" alt="Spectrogram for avgridnet_aux_expr_auxface 80% occlude finetune randocc40" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc40.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc60.png" alt="Spectrogram for avgridnet_aux_expr_auxface 80% occlude finetune randocc60" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc60.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+                <td>
+                  <div class="clip">
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc80.png" alt="Spectrogram for avgridnet_aux_expr_auxface 80% occlude finetune randocc80" />
+                    <audio controls preload="none">
+                      <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc80.wav" type="audio/wav" />
+                    </audio>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
-      <p class="footer">Project website placeholder for <code>modality_missing_robustness</code></p>
     </main>
   </body>
 </html>
