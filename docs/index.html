@@ -236,18 +236,13 @@
           random visual-modality occlusion. Each cue configuration is shown for
           models trained without occlusion and after 80% occlusion finetuning.
         </p>
-        <p class="meta">
-          Cue configurations (top to bottom): Lip, Lip+Enroll, Lip+Expr,
-          Lip+Face, Lip+Expr+Face, Lip+Enroll+Expr+Face. Columns correspond to
-          random occlusion rates 0%, 10%~30%, 30%~50%, 50%~70%, and 70%~90%.
-        </p>
       </header>
 
       <section aria-labelledby="audio-title">
         <h2 id="audio-title">Demo examples under random modality occlusion</h2>
         <p class="section-note">
           All systems use <strong>TF-GridNet</strong> as the audio backbone.
-          Mix and Target are scene references; subsequent rows are estimated
+          Mix and Target are given; subsequent rows are estimated
           target speech with corresponding spectrograms for each cue
           configuration and occlusion setting.
         </p>
@@ -290,7 +285,7 @@
                 </td>
               </tr>
               <tr class="subhead">
-                <th class="row-label" scope="row"></th>
+                <th class="row-label" scope="row">Random Occlusion Ratio</th>
                 <th scope="col">0%</th>
                 <th scope="col">10%~30%</th>
                 <th scope="col">30%~50%</th>
