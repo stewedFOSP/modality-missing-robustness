@@ -216,8 +216,7 @@
         <p class="meta">
           Cue configurations (top to bottom): Lip, Lip+Enroll, Lip+Expr,
           Lip+Face, Lip+Expr+Face, Lip+Enroll+Expr+Face. Columns correspond to
-          random occlusion 0 and random occlusion ranges [10, 30%], [30, 50%],
-          [50, 70%], and [70, 90%].
+          random occlusion rates 0%, 10%~30%, 30%~50%, 50%~70%, and 70%~90%.
         </p>
       </header>
 
@@ -273,11 +272,11 @@
               </tr>
               <tr class="subhead">
                 <th class="row-label" scope="row"></th>
-                <th scope="col">random occlusion 0</th>
-                <th scope="col">random occlusion [10, 30%]</th>
-                <th scope="col">random occlusion [30, 50%]</th>
-                <th scope="col">random occlusion [50, 70%]</th>
-                <th scope="col">random occlusion [70, 90%]</th>
+                <th scope="col">0%</th>
+                <th scope="col">10%~30%</th>
+                <th scope="col">30%~50%</th>
+                <th scope="col">50%~70%</th>
+                <th scope="col">70%~90%</th>
               </tr>
               <tr>
                 <th class="row-label" scope="row">
@@ -286,7 +285,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/clean/randocc0.png" alt="Spectrogram for Lip no occlude train random occlusion 0" />
+                    <img src="assets/picture/avgridnet/clean/randocc0.png" alt="Spectrogram for Lip no occlude train 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/clean/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -294,7 +293,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/clean/randocc20.png" alt="Spectrogram for Lip no occlude train random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet/clean/randocc20.png" alt="Spectrogram for Lip no occlude train 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/clean/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -302,7 +301,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/clean/randocc40.png" alt="Spectrogram for Lip no occlude train random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet/clean/randocc40.png" alt="Spectrogram for Lip no occlude train 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/clean/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -310,7 +309,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/clean/randocc60.png" alt="Spectrogram for Lip no occlude train random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet/clean/randocc60.png" alt="Spectrogram for Lip no occlude train 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/clean/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -318,7 +317,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/clean/randocc80.png" alt="Spectrogram for Lip no occlude train random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet/clean/randocc80.png" alt="Spectrogram for Lip no occlude train 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/clean/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -332,7 +331,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/occlude/randocc0.png" alt="Spectrogram for Lip 80% occlude finetune random occlusion 0" />
+                    <img src="assets/picture/avgridnet/occlude/randocc0.png" alt="Spectrogram for Lip 80% occlude finetune 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/occlude/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -340,7 +339,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/occlude/randocc20.png" alt="Spectrogram for Lip 80% occlude finetune random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet/occlude/randocc20.png" alt="Spectrogram for Lip 80% occlude finetune 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/occlude/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -348,7 +347,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/occlude/randocc40.png" alt="Spectrogram for Lip 80% occlude finetune random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet/occlude/randocc40.png" alt="Spectrogram for Lip 80% occlude finetune 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/occlude/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -356,7 +355,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/occlude/randocc60.png" alt="Spectrogram for Lip 80% occlude finetune random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet/occlude/randocc60.png" alt="Spectrogram for Lip 80% occlude finetune 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/occlude/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -364,7 +363,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet/occlude/randocc80.png" alt="Spectrogram for Lip 80% occlude finetune random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet/occlude/randocc80.png" alt="Spectrogram for Lip 80% occlude finetune 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet/occlude/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -378,7 +377,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/clean/randocc0.png" alt="Spectrogram for Lip+Enroll no occlude train random occlusion 0" />
+                    <img src="assets/picture/avgridnet_aux/clean/randocc0.png" alt="Spectrogram for Lip+Enroll no occlude train 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/clean/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -386,7 +385,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/clean/randocc20.png" alt="Spectrogram for Lip+Enroll no occlude train random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_aux/clean/randocc20.png" alt="Spectrogram for Lip+Enroll no occlude train 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/clean/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -394,7 +393,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/clean/randocc40.png" alt="Spectrogram for Lip+Enroll no occlude train random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_aux/clean/randocc40.png" alt="Spectrogram for Lip+Enroll no occlude train 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/clean/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -402,7 +401,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/clean/randocc60.png" alt="Spectrogram for Lip+Enroll no occlude train random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_aux/clean/randocc60.png" alt="Spectrogram for Lip+Enroll no occlude train 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/clean/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -410,7 +409,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/clean/randocc80.png" alt="Spectrogram for Lip+Enroll no occlude train random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_aux/clean/randocc80.png" alt="Spectrogram for Lip+Enroll no occlude train 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/clean/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -424,7 +423,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/occlude/randocc0.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune random occlusion 0" />
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc0.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/occlude/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -432,7 +431,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/occlude/randocc20.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc20.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/occlude/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -440,7 +439,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/occlude/randocc40.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc40.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/occlude/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -448,7 +447,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/occlude/randocc60.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc60.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/occlude/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -456,7 +455,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux/occlude/randocc80.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_aux/occlude/randocc80.png" alt="Spectrogram for Lip+Enroll 80% occlude finetune 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux/occlude/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -470,7 +469,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/clean/randocc0.png" alt="Spectrogram for Lip+Expr no occlude train random occlusion 0" />
+                    <img src="assets/picture/avgridnet_expr/clean/randocc0.png" alt="Spectrogram for Lip+Expr no occlude train 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/clean/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -478,7 +477,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/clean/randocc20.png" alt="Spectrogram for Lip+Expr no occlude train random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_expr/clean/randocc20.png" alt="Spectrogram for Lip+Expr no occlude train 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/clean/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -486,7 +485,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/clean/randocc40.png" alt="Spectrogram for Lip+Expr no occlude train random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_expr/clean/randocc40.png" alt="Spectrogram for Lip+Expr no occlude train 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/clean/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -494,7 +493,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/clean/randocc60.png" alt="Spectrogram for Lip+Expr no occlude train random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_expr/clean/randocc60.png" alt="Spectrogram for Lip+Expr no occlude train 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/clean/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -502,7 +501,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/clean/randocc80.png" alt="Spectrogram for Lip+Expr no occlude train random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_expr/clean/randocc80.png" alt="Spectrogram for Lip+Expr no occlude train 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/clean/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -516,7 +515,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/occlude/randocc0.png" alt="Spectrogram for Lip+Expr 80% occlude finetune random occlusion 0" />
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc0.png" alt="Spectrogram for Lip+Expr 80% occlude finetune 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/occlude/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -524,7 +523,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/occlude/randocc20.png" alt="Spectrogram for Lip+Expr 80% occlude finetune random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc20.png" alt="Spectrogram for Lip+Expr 80% occlude finetune 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/occlude/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -532,7 +531,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/occlude/randocc40.png" alt="Spectrogram for Lip+Expr 80% occlude finetune random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc40.png" alt="Spectrogram for Lip+Expr 80% occlude finetune 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/occlude/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -540,7 +539,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/occlude/randocc60.png" alt="Spectrogram for Lip+Expr 80% occlude finetune random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc60.png" alt="Spectrogram for Lip+Expr 80% occlude finetune 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/occlude/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -548,7 +547,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr/occlude/randocc80.png" alt="Spectrogram for Lip+Expr 80% occlude finetune random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_expr/occlude/randocc80.png" alt="Spectrogram for Lip+Expr 80% occlude finetune 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr/occlude/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -562,7 +561,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/clean/randocc0.png" alt="Spectrogram for Lip+Face no occlude train random occlusion 0" />
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc0.png" alt="Spectrogram for Lip+Face no occlude train 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/clean/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -570,7 +569,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/clean/randocc20.png" alt="Spectrogram for Lip+Face no occlude train random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc20.png" alt="Spectrogram for Lip+Face no occlude train 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/clean/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -578,7 +577,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/clean/randocc40.png" alt="Spectrogram for Lip+Face no occlude train random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc40.png" alt="Spectrogram for Lip+Face no occlude train 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/clean/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -586,7 +585,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/clean/randocc60.png" alt="Spectrogram for Lip+Face no occlude train random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc60.png" alt="Spectrogram for Lip+Face no occlude train 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/clean/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -594,7 +593,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/clean/randocc80.png" alt="Spectrogram for Lip+Face no occlude train random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_auxface/clean/randocc80.png" alt="Spectrogram for Lip+Face no occlude train 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/clean/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -608,7 +607,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/occlude/randocc0.png" alt="Spectrogram for Lip+Face 80% occlude finetune random occlusion 0" />
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc0.png" alt="Spectrogram for Lip+Face 80% occlude finetune 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/occlude/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -616,7 +615,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/occlude/randocc20.png" alt="Spectrogram for Lip+Face 80% occlude finetune random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc20.png" alt="Spectrogram for Lip+Face 80% occlude finetune 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/occlude/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -624,7 +623,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/occlude/randocc40.png" alt="Spectrogram for Lip+Face 80% occlude finetune random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc40.png" alt="Spectrogram for Lip+Face 80% occlude finetune 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/occlude/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -632,7 +631,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/occlude/randocc60.png" alt="Spectrogram for Lip+Face 80% occlude finetune random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc60.png" alt="Spectrogram for Lip+Face 80% occlude finetune 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/occlude/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -640,7 +639,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_auxface/occlude/randocc80.png" alt="Spectrogram for Lip+Face 80% occlude finetune random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_auxface/occlude/randocc80.png" alt="Spectrogram for Lip+Face 80% occlude finetune 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_auxface/occlude/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -654,7 +653,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc0.png" alt="Spectrogram for Lip+Expr+Face no occlude train random occlusion 0" />
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc0.png" alt="Spectrogram for Lip+Expr+Face no occlude train 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/clean/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -662,7 +661,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc20.png" alt="Spectrogram for Lip+Expr+Face no occlude train random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc20.png" alt="Spectrogram for Lip+Expr+Face no occlude train 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/clean/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -670,7 +669,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc40.png" alt="Spectrogram for Lip+Expr+Face no occlude train random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc40.png" alt="Spectrogram for Lip+Expr+Face no occlude train 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/clean/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -678,7 +677,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc60.png" alt="Spectrogram for Lip+Expr+Face no occlude train random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc60.png" alt="Spectrogram for Lip+Expr+Face no occlude train 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/clean/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -686,7 +685,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc80.png" alt="Spectrogram for Lip+Expr+Face no occlude train random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_expr_auxface/clean/randocc80.png" alt="Spectrogram for Lip+Expr+Face no occlude train 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/clean/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -700,7 +699,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc0.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune random occlusion 0" />
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc0.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -708,7 +707,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc20.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc20.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -716,7 +715,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc40.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc40.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -724,7 +723,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc60.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc60.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -732,7 +731,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc80.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_expr_auxface/occlude/randocc80.png" alt="Spectrogram for Lip+Expr+Face 80% occlude finetune 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_expr_auxface/occlude/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -746,7 +745,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc0.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train random occlusion 0" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc0.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -754,7 +753,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc20.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc20.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -762,7 +761,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc40.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc40.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -770,7 +769,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc60.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc60.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -778,7 +777,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc80.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/clean/randocc80.png" alt="Spectrogram for Lip+Enroll+Expr+Face no occlude train 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/clean/randocc80.wav" type="audio/wav" />
                     </audio>
@@ -792,7 +791,7 @@
                 </th>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc0.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune random occlusion 0" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc0.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune 0%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc0.wav" type="audio/wav" />
                     </audio>
@@ -800,7 +799,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc20.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune random occlusion [10, 30%]" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc20.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune 10%~30%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc20.wav" type="audio/wav" />
                     </audio>
@@ -808,7 +807,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc40.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune random occlusion [30, 50%]" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc40.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune 30%~50%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc40.wav" type="audio/wav" />
                     </audio>
@@ -816,7 +815,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc60.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune random occlusion [50, 70%]" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc60.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune 50%~70%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc60.wav" type="audio/wav" />
                     </audio>
@@ -824,7 +823,7 @@
                 </td>
                 <td>
                   <div class="clip">
-                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc80.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune random occlusion [70, 90%]" />
+                    <img src="assets/picture/avgridnet_aux_expr_auxface/occlude/randocc80.png" alt="Spectrogram for Lip+Enroll+Expr+Face 80% occlude finetune 70%~90%" />
                     <audio controls preload="none">
                       <source src="assets/audio/avgridnet_aux_expr_auxface/occlude/randocc80.wav" type="audio/wav" />
                     </audio>
