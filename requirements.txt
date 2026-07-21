@@ -1,0 +1,8 @@
+torch
+numpy
+soundfile
+PyYAML
+torch_complex
+typeguard
+librosa
+packaging
